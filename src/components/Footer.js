@@ -6,9 +6,9 @@ const Footer = () => {
     return (
         <footer className='bg-[#D73636]'>
             <div className='lg:max-w-7xl mx-auto'>
-                <div className='py-16'>
-                    <div className='flex justify-between'>
-                        <div className='flex'>
+                <div className='md:py-16 max-md:py-10'>
+                    <div className='md:flex justify-between'>
+                        <div className='md:flex max-md:px-10'>
                             <ul className='text-white'>
                                 <h5>Kurumsal</h5>
                                 <li className='font-thin'>
@@ -27,7 +27,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                             </ul>
-                            <ul className='text-white ml-10'>
+                            <ul className='text-white md:ml-10 max-md:mt-5'>
                                 <h5>Eğitim</h5>
                                 <li className='font-thin'>
                                     <Link to="/egitimlerimiz">
@@ -35,7 +35,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                             </ul>
-                            <ul className='text-white ml-10'>
+                            <ul className='text-white md:ml-10 max-md:mt-5'>
                                 <h5>
                                     <Link to="/iletisim">
                                         İletişim
@@ -43,14 +43,21 @@ const Footer = () => {
                                 </h5>
                             </ul>
                         </div>
-                        <div>
-                            <h5 className='text-white text-center'>Bizi Takip Et!</h5>
+                        <div className='max-md:mt-5 max-md:px-10'>
+                            <h5 className='text-white md:text-center'>Bizi Takip Et!</h5>
                             <div className='flex mt-2'>
-                                <FaFacebook className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
-                                <FaInstagram className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
-                                <FaTwitter className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
-                                <FaLinkedin className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
-                                <FaYoutube className='bg-[#4D4E50] text-white text-2xl rounded-full p-1' />
+                                <a href='https://facebook.com/GNCAkademi/' target="_blank">
+                                    <FaFacebook className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
+                                </a>
+                                <a href='https://www.instagram.com/gncakademi/' target="_blank">
+                                    <FaInstagram className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
+                                </a>
+                                <a href='https://www.linkedin.com/company/gnc-akademi/?' target="_blank">
+                                    <FaLinkedin className='bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1' />
+                                </a>
+                                <a href='https://www.youtube.com/channel/UCUy38P612ndEJRxt81IbEIg' target="_blank">
+                                    <FaYoutube className='bg-[#4D4E50] text-white text-2xl rounded-full p-1' />
+                                </a>
                             </div>
                         </div>
                     </div>

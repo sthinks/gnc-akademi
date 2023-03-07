@@ -1,19 +1,15 @@
-import React, { useMemo } from 'react'
-
-import { Calendar, momentLocalizer } from 'react-big-calendar'
-import moment from 'moment'
+import React, { useMemo, useRef } from 'react';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
 import 'moment/locale/tr';
-
-
-// Setup the localizer by providing the moment (or globalize, or Luxon) Object
-// to the correct localizer.
-const localizer = momentLocalizer(moment) // or globalizeLocalizer
+import WhiteLogo from "../assets/images/white-logo.png";
+const localizer = momentLocalizer(moment)
 
 const MyCalendar = () => {
     const { defaultDate } = useMemo(() => ({
         defaultDate: new Date()
     }), [])
-
+    const calendarRef = useRef();
     const now = new Date();
 
     const events = [
@@ -117,21 +113,28 @@ const MyCalendar = () => {
         },
         {
             id: 14,
-            title: 'Today',
+            title: 'Today Todat Today Todat Today Totext-align: right;',
             start: new Date(new Date().setHours(new Date().getHours() - 3)),
             end: new Date(new Date().setHours(new Date().getHours() + 3)),
         },
     ]
 
     return (
-        <div className="myCustomHeight">
+        <div className="h-[90vh]">
+            <div className='w-full bg-[#D73636] flex justify-between items-center px-6 py-3 mb-2'>
+                <img src={WhiteLogo} className="w-32 h-auto" />
+                <h4 className='text-white'>OCAK AYI EĞİTİM TAKVİMİ</h4>
+            </div>
             <Calendar
+                ref={calendarRef}
                 localizer={localizer}
                 culture="tr"
                 startAccessor="start"
                 endAccessor="end"
                 defaultDate={defaultDate}
                 events={events}
+                messages={{ next: "İleri", previous: "Geri", today: "Bugün", month: "Ay", week: "Hafta", day: "Gün" }}
+                views={['month']}
             />
         </div>
     )
