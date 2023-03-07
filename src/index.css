@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(react-big-calendar/lib/css/react-big-calendar.css);
+
+body {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url("") format("woff");
+  }
+
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 500;
+    src: url("") format("woff");
+  }
+}
+
+.myCustomHeight {
+  height: 100vh !important;
+}
