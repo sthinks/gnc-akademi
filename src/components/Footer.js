@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <footer className='bg-[#D73636]'>
-      <div className='lg:max-w-7xl mx-auto'>
+      <div className='mx-auto lg:max-w-7xl md:px-8'>
         <div className='md:py-16 max-md:py-10'>
           <div className='md:flex justify-between'>
             <div className='md:flex max-md:px-10'>
@@ -67,16 +67,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div>
-        <h5 className="text-white text-center">Bizi Takip Et!</h5>
-        <div className="flex mt-2">
-          <FaFacebook className="bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1" />
-          <FaInstagram className="bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1" />
-          <FaTwitter className="bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1" />
-          <FaLinkedin className="bg-[#4D4E50] text-white text-2xl rounded-full p-1 mr-1" />
-          <FaYoutube className="bg-[#4D4E50] text-white text-2xl rounded-full p-1" />
         </div>
       </div>
     </footer>

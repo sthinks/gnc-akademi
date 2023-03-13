@@ -1,10 +1,10 @@
 import React from 'react'
-import Banner from '../assets/images/contact/Contact-Banner.png'
 import { useFormik } from 'formik'
 import { Helmet } from 'react-helmet'
 import * as Yup from 'yup'
 import { ImLocation2, ImPhone } from 'react-icons/im'
 import { TfiEmail } from 'react-icons/tfi'
+import Banner from '../components/Banner'
 
 const Contact = () => {
   const formik = useFormik({
@@ -28,12 +28,7 @@ const Contact = () => {
         <title>İletişim</title>
       </Helmet>
       <div className="">
-        <div className="w-full relative flex justify-center items-center">
-          <img className="w-full" src={Banner} alt="İletişim" />
-          <p className="absolute text-white text-5xl font-bold max-sm:text-2xl">
-            İLETİŞİM
-          </p>
-        </div>
+        <Banner title="İLETİŞİM" />
         <div className="container mx-auto flex justify-center items-center relative top-[-100px] max-xl:top-[-50px] max-lg:top-[-10px] max-sm:top-0 max-md:flex-col">
           <div className="flex justify-center items-center flex-col bg-[#D73636] w-[487px] h-[510px] max-sm:w-full">
             <div className="flex justify-center items-center flex-col w-5/12 text-center text-white m-3">

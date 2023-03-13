@@ -5,14 +5,17 @@ import { FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import axios from 'axios';
+import AboutUs from '../assets/images/menu-hakkimizda.png'
 
 const Navbar = () => {
     let subtitle;
     const [navbar, setNavbar] = useState(false);
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [value, setValue] = useState('')
-    const [data, setData] = useState([])
-    const [searched, setSearched] = useState()
+    const [value, setValue] = useState('');
+    const [data, setData] = useState([]);
+    const [searched, setSearched] = useState();
+    const [dropdown, setDropdown] = useState(false);
+    const [education, setEducation] = useState(false);
 
     function openModal() {
         setIsOpen(true);
@@ -63,14 +66,12 @@ const Navbar = () => {
         filteredData()
     }, [value])
 
-    console.log(searched)
-
     return (
         <>
             <nav className="w-full shadow">
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
-                        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+                        <div className="flex items-center justify-between md:block">
                             <Link to='/'>
                                 <img src={Logo} width="120" />
                             </Link>
@@ -118,16 +119,38 @@ const Navbar = () => {
                                 }`}
                         >
                             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <li className="font-semibold">
+                                <li className="font-semibold md:py-7">
                                     <Link to="/">Ana Sayfa</Link>
                                 </li>
-                                <li>
+                                <li className='relative md:py-7' onMouseEnter={() => setDropdown(true)} onMouseLeave={() => setDropdown(false)}>
                                     <Link to="/hakkimizda">Hakkımızda</Link>
+                                    {dropdown ? <div className='absolute top-[5rem] z-10 w-[430px] left-[-200%]'>
+                                        <div className='flex justify-between bg-[#D73636] flex-1 h-full w-full'>
+                                            <ul className='text-white flex-1 flex justify-center flex-col pl-5'>
+                                                <li><Link to="/hakkimizda/vizyon-misyon">Vizyon-Misyon</Link></li>
+                                                <li className='mt-2'><Link to="/hakkimizda/degerler">Değerler</Link></li>
+                                                <li className='mt-2'><Link to="/kvkk">KVKK</Link></li>
+                                                <li className='mt-2'><Link to="/kalite-politikamiz">Kalite Politikamız</Link></li>
+                                            </ul>
+                                            <img src={AboutUs} className="flex-1 w-full h-auto" />
+                                        </div>
+                                    </div> : null}
                                 </li>
-                                <li>
+                                <li className='relative md:py-7' onMouseEnter={() => setEducation(true)} onMouseLeave={() => setEducation(false)}>
                                     <Link to="/egitimlerimiz">Eğitimlerimiz</Link>
+                                    {education ? <div className='absolute top-[5rem] z-10 w-[440px] left-[-200%]'>
+                                        <div className='flex justify-between bg-[#D73636] flex-1 h-full w-full'>
+                                            <ul className=' text-white flex-1 flex justify-center flex-col pl-5'>
+                                                <li><Link to="/egitimlerimiz/satis-isleme-merkezi-egitimi">Satış İşleme Merkezi Eğitimi</Link></li>
+                                                <li className='mt-2'><Link to="/egitimlerimiz/satis-torna-egitimi">Satış Torna Eğitimi</Link></li>
+                                                <li className='mt-2'><Link to="/egitimlerimiz">Tüm Eğitimler</Link></li>
+                                                <li className='mt-2'><Link to="/egitimlerimiz/galeri">Galeri</Link></li>
+                                            </ul>
+                                            <img src={AboutUs} className="w-full h-auto flex-1" />
+                                        </div>
+                                    </div> : null}
                                 </li>
-                                <li>
+                                <li className='md:py-7'>
                                     <Link to="/iletisim">İletişim</Link>
                                 </li>
                             </ul>
